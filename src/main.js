@@ -19,7 +19,7 @@ import './assets/style/iconfont.css'
 Vue.config.productionTip = false
 Vue.use(VueRouter)
 
-axios.defaults.baseURL="http://localhost:8080/static/mock/"
+//axios.defaults.baseURL="http://localhost:8080/static/mock/"
 Vue.prototype.$http=axios
 
 const router = new VueRouter({

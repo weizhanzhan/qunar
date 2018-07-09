@@ -25,6 +25,30 @@
 			"id": 125,
 			"spell": "guilin",
 			"name": "桂林"
+		}, {
+			"id": 156,
+			"spell": "changzhou",
+			"name": "常州"
+		}, {
+			"id": 339,
+			"spell": "xianggang",
+			"name": "香港"
+		}, {
+			"id": 55,
+			"spell": "heilongjiang",
+			"name": "黑龙江"
+		}, {
+			"id": 636,
+			"spell": "sichuan",
+			"name": "四川"
+		}, {
+			"id": 329,
+			"spell": "chengdu",
+			"name": "成都"
+		}, {
+			"id": 535,
+			"spell": "shenzhen",
+			"name": "深圳"
 		}],
 		"cities": {
 			"A": [{
