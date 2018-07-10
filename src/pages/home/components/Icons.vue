@@ -1,6 +1,6 @@
 <template>
     <div class="icons">
-         <swiper :options="swiperOption" ref="mySwiper" >
+         <swiper :options="swiperOption" ref="mySwiper"  v-if="list.length">
             <swiper-slide v-for="(lists,index) in pages" :key="index">
                 <div class="icon" v-for="item of lists" :key="item.id">
                     <div class="icon-img">
@@ -8,8 +8,11 @@
                     </div>                 
                     <p class="icon-desc">{{item.desc}}</p>
                 </div> 
-            </swiper-slide>        
+               
+            </swiper-slide> 
+            <div class="swiper-pagination position"  slot="pagination"></div>     
         </swiper>
+          
     </div>
 </template>
 
@@ -18,8 +21,8 @@ export default {
     data(){
         return{
             swiperOption:{
-                  // pagination:'.swiper-pagination',//显示swiper中 类似分页的点
-                 // loop:true //轮播支持循环
+                 pagination:'.swiper-pagination',//显示swiper中 类似分页的点
+                 loop:true //轮播支持循环
               },    
         }
     },
@@ -47,9 +50,13 @@ export default {
     @import '~@/assets/style/mixins.styl'; //字符太长 省略号代替
     .icons >>> .swiper-container
       height 0
-      padding-bottom 50%
+      padding-bottom 55%
     .icons
       margin-top .1rem
+      .position
+        bottom: -1px;
+        width: 100%;
+        z-index 1
       .icon
         position relative
         overflow hidden
