@@ -845,7 +845,7 @@ batch@0.6.1:
 
 better-scroll@^1.12.4:
   version "1.12.4"
-  resolved "https://registry.yarnpkg.com/better-scroll/-/better-scroll-1.12.4.tgz#27d722fe7b6844176feb136da4f2fd39c70f973e"
+  resolved "http://r.cnpmjs.org/better-scroll/download/better-scroll-1.12.4.tgz#27d722fe7b6844176feb136da4f2fd39c70f973e"
   dependencies:
     babel-runtime "^6.0.0"
 
