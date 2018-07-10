@@ -45,7 +45,8 @@ export default {
         }
     },
     mounted () {
-        this.$http.get('/api/city.json')
+        // this.$http.get('/api/city.json')
+        this.$http.get('city.json')
         .then(this.getCity)
     }
 }

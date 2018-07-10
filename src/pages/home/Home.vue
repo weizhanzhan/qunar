@@ -48,7 +48,8 @@ export default {
         }
     },
     mounted () {
-        this.$http.get("/api/index.json")
+        // this.$http.get("/api/index.json")
+        this.$http.get("index.json")
         .then(this.getData)
     }
 
