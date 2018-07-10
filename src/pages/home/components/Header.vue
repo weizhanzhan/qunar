@@ -19,8 +19,10 @@
 <script>
 export default {
     name:"HomeHeader",
-    props:{
-        city:String
+    computed:{
+        city(){
+            return this.$store.state.city
+        }
     }
 
 }

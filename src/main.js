@@ -6,6 +6,8 @@ import VueRouter from 'vue-router'
 import Routes from './routes/routes'
 import axios from 'axios'
 import fastClick from 'fastclick'
+import store from './store'
+
 
 //引入vue-awesome-swiper  轮播
 import VueAwesomeSwiper from 'vue-awesome-swiper'
@@ -33,5 +35,6 @@ new Vue({
   el: '#app',
   components: { App },
   template: '<App/>',
-  router
+  router,
+  store
 })

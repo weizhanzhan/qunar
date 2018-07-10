@@ -33,7 +33,6 @@ export default {
     },
     methods:{
         getCity(res){
-            console.log(res.data)
             res=res.data
             if(res.ret){
                 this.hotCities=res.data.hotCities

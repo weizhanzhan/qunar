@@ -5,7 +5,7 @@
             <div class="title">当前城市</div>
             <div class="button-list">
                 <div class="button-wrapper">
-                    <div class="button">常州</div>                   
+                    <div class="button">{{city}}</div>                   
                 </div>         
             </div>
         </div>
@@ -15,6 +15,7 @@
                 <div class="button-wrapper"
                      v-for="item of hotCities"
                      :key="item.id"
+                     @click="handleCityClick(item.name)"
                 >
                      <div class="button">{{item.name}}</div>                   
                 </div>              
@@ -29,6 +30,7 @@
                 <div class="item" 
                 v-for="item of city" 
                 :key="item.id" 
+                @click="handleCityClick(item.name)"
                 >{{item.name}}</div>
             </div> 
           </div> 
@@ -53,8 +55,21 @@ export default {
             }
         }
     },
+    computed:{
+        city(){
+            return this.$store.state.city
+        }
+    },
+    methods:{
+        handleCityClick(name){
+           this.$store.commit('changeCity',name)
+           this.$router.push('/')
+        }
+    },
     mounted(){
-        this.scroll=new Bscroll(this.$refs.wrapper)
+        this.scroll=new Bscroll(this.$refs.wrapper,{
+            click:true
+        })
         
     }
 }

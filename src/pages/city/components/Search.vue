@@ -7,6 +7,7 @@
        <ul>
          <li v-for="item of list" 
              :key="item.id"
+             @click="handleCityClick(item.name)"
              class="search-item">
              {{item.name}}
         </li>
@@ -62,8 +63,19 @@ export default {
             return !this.list.length
         }
     },
+    methods:{
+        handleCityClick(name){
+           
+           this.$store.commit('changeCity',name)
+           this.keyWord=''
+           this.$router.push('/')
+           
+        }
+    },
     mounted(){
-        this.scroll=new Bscroll(this.$refs.wrapper)
+        this.scroll=new Bscroll(this.$refs.wrapper,{
+            click:true
+        })
     }
 
 }
