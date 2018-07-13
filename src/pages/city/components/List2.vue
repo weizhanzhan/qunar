@@ -40,7 +40,7 @@
 
 <script>
 import Bscroll from 'better-scroll'
-
+import {mapState,mapMutations} from 'vuex'
 export default {
     props:{
         hotCities:Array,
@@ -56,15 +56,15 @@ export default {
         }
     },
     computed:{
-        city(){
-            return this.$store.state.city
-        }
+        ...mapState(['city'])
     },
     methods:{
         handleCityClick(name){
-           this.$store.commit('changeCity',name)
+         //  this.$store.commit('changeCity',name)
+           this.changeCity(name)
            this.$router.push('/')
-        }
+        },
+        ...mapMutations(['changeCity']) //把vuex的方法映射到该组件的方法中 名字相同 调用的时候就可以写this.xxxx
     },
     mounted(){
         this.scroll=new Bscroll(this.$refs.wrapper,{

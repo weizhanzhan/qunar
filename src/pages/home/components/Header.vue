@@ -17,12 +17,12 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
     name:"HomeHeader",
     computed:{
-        city(){
-            return this.$store.state.city
-        }
+        ...mapState(['city']) //默认city
+      // ...mapState({currentCity:'city'}) 自己命名
     }
 
 }
@@ -55,7 +55,8 @@ export default {
       background :#fff
       border-radius:.1rem
     .header-right
-      width :1.24rem
+      min-width 1.04rem
+      padding 0 .1rem
       float :right
       text-align :center
       color #fff
