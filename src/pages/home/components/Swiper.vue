@@ -16,7 +16,7 @@ export default {
           list:Array
       },
       data(){
-          return{
+          return{ 
               swiperOption:{
                   pagination:'.swiper-pagination',//显示swiper中 类似分页的点
                   loop:true //轮播支持循环
