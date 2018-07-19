@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="banner">
+    <div class="banner" @click="handleBanner">
         <img class="banner-img" src="http://img1.qunarzz.com/sight/p0/1611/78/786b5749da2dceb5a3.water.jpg_r_800x800_b52c7865.jpg"/>
         <div class="banner-info">
           <div class="banner-title">常州中华恐龙园(AAAAA景区)</div>
@@ -10,7 +10,7 @@
           </div>
         </div>
     </div> 
-    <common-gallary></common-gallary>
+    <common-gallary :imgs="imgs" v-show="showGallary" @closeBanner="closeBanner"></common-gallary>
   </div>
 </template>
 
@@ -20,6 +20,23 @@ export default {
     name:"banner",
     components:{
         CommonGallary
+    },
+    data(){
+        return{
+            imgs: [
+                    'http://img1.qunarzz.com/sight/p0/1807/c9/c9b31bce950940bda3.img.jpg_r_800x800_375a5f0f.jpg',
+                    'http://img1.qunarzz.com/sight/p0/1807/b3/b366356df3f4f44a3.img.jpg_r_800x800_07fb1909.jpg'
+                ],
+            showGallary:false
+        }
+    },
+    methods:{
+        handleBanner(){
+            this.showGallary=true
+        },
+        closeBanner(){
+            this.showGallary=false
+        }
     }
     
 }
