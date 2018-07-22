@@ -27,6 +27,11 @@ Vue.prototype.$http=axios
 
 const router = new VueRouter({
   routes:Routes,
+  scrollBehavior(){
+      return {
+          x:0,y:0
+        }
+  }
 //  mode:'history' 
 })
 
